@@ -1,0 +1,65 @@
+#include <iostream>
+#include <conio.h>
+#include <stdlib.h>
+
+using namespace std;
+
+
+char wybor; //do switch'a
+
+int main()
+{
+poczatek://etykieta dla instr. bezwarun. goto
+    system("cls"); //czyszczenie ekranu
+    cout << "\n\n\t\t\t\t 1 - Program A";
+    cout << "\n\n\t\t\t\t 2 - Program do domu";
+    cout << "\n\n\t\t\t\t 3 - Wyjscie";
+    cout << "\n\nTwoj wybor: "; cin >> wybor;
+    switch (wybor)
+    {
+    case '1': 
+    {system("cls"); //czyszczenie ekranu
+    double x, y;
+    cout << "\n\n\t\t\t\t Obliczanie wartosci funkcji y(x).";
+    cout << "\n\nPodaj x = "; cin >> x;
+    if (((x >= -200) && (x <= -10)) || ((x >= 5) && (x <= 50)))
+    {
+        double l, m, w = 3;
+        l = x * x * x  + 2 * x * x;
+        m = 0.75;
+        y = pow((l / m), (1 / w));
+        cout << "\nWarotsc funkcji y(" << x << ")=" << y;
+    }
+    else
+    {
+        if (((x > -10) && (x < 0)) || ((x >= 100) && (x <= 200)))
+        {
+            double l, m;
+            l = 2.5 * x - 3;
+            m = 0.5 * x;
+            y = (l / m);
+            cout << "\nWarotsc funkcji y(" << x << ")=" << y;
+        }
+        else
+        {
+            cout << "\nWarotsc funkcji y(" << x << ")=" << x;
+        }
+    }
+
+        _getch(); break; }
+
+    case '2':
+    {system("cls"); //czyszczenie ekranu
+
+        _getch(); break; }
+
+    case '3': { break; }
+
+    default: {cout << "\n\nNiewlasciwy wybor!"; _getch(); break; }
+
+    }//end switch'a
+
+    //if ((wybor == '1') || (wybor == '2')) goto poczatek; //bez default
+    if (wybor!='3') goto poczatek;
+
+}
