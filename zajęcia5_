@@ -1,0 +1,125 @@
+#include <iostream>
+#include <conio.h>
+#include <stdlib.h>
+
+using namespace std;
+
+
+void tab_1D_statyczna()
+{
+    string dni_tyg[7]; //deklaracja tablicy
+    int miesiac[12];
+    //wpiswanie z klawiatury
+    /*
+    cout << "Podaj 1 dzien tygodnia: "; cin >> dni_tyg[0];
+    cout << "Podaj 2 dzien tygodnia: "; cin >> dni_tyg[1];
+    cout << "Podaj 3 dzien tygodnia: "; cin >> dni_tyg[2];
+    cout << "Podaj 4 dzien tygodnia: "; cin >> dni_tyg[3];
+    cout << "Podaj 5 dzien tygodnia: "; cin >> dni_tyg[4];
+    cout << "Podaj 6 dzien tygodnia: "; cin >> dni_tyg[5];
+    cout << "Podaj 7 dzien tygodnia: "; cin >> dni_tyg[6]; */
+
+    //wyswietlanie
+    cout << "\n 1 dzien tyg. to: " << dni_tyg[0];
+    cout << "\n 2 dzien tyg. to: " << dni_tyg[1];
+    cout << "\n 3 dzien tyg. to: " << dni_tyg[2];
+    cout << "\n 4 dzien tyg. to: " << dni_tyg[3];
+    cout << "\n 5 dzien tyg. to: " << dni_tyg[4];
+    cout << "\n 6 dzien tyg. to: " << dni_tyg[5];
+    cout << "\n 7 dzien tyg. to: " << dni_tyg[6];
+
+    //miesiace za pomoca petli
+    for (int i = 0; i < 12; ++i)
+    {
+        miesiac[i] = i + 1;
+    }
+
+    //wyswietlanie m-cy
+    for (int i = 0; i < 12; ++i)
+    {
+        cout << "\n" << i + 1 << " miesiac to: " << miesiac[i];
+    }
+
+    //odwolanie do elementu tab
+    cout << "\n\nInne odwolanie *nazwa - 1 element: " << *miesiac;
+    cout << "\n\nInne odwolanie nazwa [x] - x element: " << miesiac[5];
+}
+
+void tab_2D_statyczna()
+{
+    const int lw = 4; //liczba wierszy
+    const int lk = 4; //liczba kolumn
+    int Tab[lw][lk];
+
+    //wpisywanie
+    for (int i = 0; i < lw; ++i)
+        for (int j = 0; j < lk; ++j)
+        {
+            Tab[i][j] = 10 + i + j;
+        }
+
+    //wyswietlanie
+    for (int i = 0; i < lw; ++i)
+    {
+        for (int j = 0; j < lk; ++j)
+        {
+            cout << "\t Tab[" << i << "][" << j << "] =" << Tab[i][j];
+        }
+        cout << endl;
+    }
+}
+
+void tab_1D_dynamiczna(int lw)
+{
+    int* T1D = new int[lw]; //deklaracja zmiennej tab. dyn.
+
+    for (int i = 0; i < lw; ++i)
+    {
+        T1D[i] = i + lw * 5;
+    }
+    for (int i = 0; i < lw; ++i)
+    {
+        cout << "\nT1D[" << i << "]= " << T1D[i];
+
+    }
+
+    delete[] T1D; //zwalniamy pamiec
+}
+
+void tab_2D_dynamiczna(int lw, int lk)
+{
+    int** T2D = new int* [lw];
+    for (int i = 0; i < lw; ++i)
+        T2D[i] = new int[lk];
+
+    for (int i = 0; i < lw; ++i)
+    {
+        for (int j = 0; j < lk; ++j)
+        {
+            T2D[i][j] = i;
+        }
+    }
+
+    for (int i = 0; i < lw; ++i)
+    {
+        for (int j = 0; j < lk; ++j)
+        {
+            cout << "\t T2D[" << i << "][" << j << "] =" << T2D[i][j];
+        }
+        cout << endl;
+    }
+}
+
+int main()
+{
+    // tab_1D_statyczna();
+    // tab_2D_statyczna();
+    int l_w;
+    int l_k;
+    srand(time(0));
+    l_w = rand() % 9 + 1;
+    l_k = rand() % 9 + 1;
+    //tab_1D_dynamiczna(l_w);
+    tab_2D_dynamiczna(l_w, l_k);
+    _getch();
+}
