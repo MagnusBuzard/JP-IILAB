@@ -1,0 +1,67 @@
+#include <iostream>
+#include <conio.h>
+#include <stdlib.h>
+
+using namespace std;
+int kwadrat(int a1)
+{
+        return a1 * a1;
+}
+float trojkat(float b1, float h1)
+{
+        return (b1 * h1)/2;
+}
+float kolo(float r1)
+{
+        return (3.14)*(r1*r1);
+}
+int main()
+{
+        int wybor;
+        do
+        {
+                system("cls");
+                cout << "\n\n\t\t\t\t 1 - Pole powierzchni kwadratu";
+                cout << "\n\n\t\t\t\t 2 - Pole powierzchni trojkata";
+                cout << "\n\n\t\t\t\t 3 - Pole powierzchni koła";
+                cout << "\n\n Twoj wybor to: ";
+                cin >> wybor;
+                switch (wybor)
+                {
+                case 1:
+                {
+                        int a;
+                        system("cls");
+                        cout << "\n Podaj bok kwadratu: ";
+                                cin >> a;
+                        cout<<"Pole kwadratu o boku "<<a<<" wynosi: "<<kwadrat(a);
+                        _getch();
+                        break;
+                }
+                case 2:
+                {
+                        float b, h;
+                        system("cls");
+                        cout << "\n Podaj dlugosc podstawy trojkata: ";
+                                cin >> b;
+                                cout << "\n Podaj dlugosc wysokosci trojkata: ";
+                                cin >> h;
+                        cout << "Pole trojkata o boku " << b <<"i wysokosci "<<h<< "wynosi:" << trojkat(b, h);
+                        _getch();
+                        break;
+                }
+                case 3:
+                {
+                        float r;
+                        system("cls");
+                        cout << "\n Podaj promien kola: ";
+                                cin >> r;
+                        cout << "Pole kola o promieniu " << r << " wynosi:" << kolo(r);
+                        _getch();
+                        break;
+                }
+                
+                default: {cout << "\n\n Niewlasciwy wybor!"; _getch(); break; }
+                }
+        } while (wybor != 3);
+}
