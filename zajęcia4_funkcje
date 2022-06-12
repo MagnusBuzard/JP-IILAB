@@ -1,0 +1,46 @@
+#include <iostream>
+#include <conio.h>
+#include <stdlib.h>
+
+
+using namespace std;
+
+double jakies_dzialanie(double x1, double x2); //deklaracja funkcji
+
+int potega(int a1)
+{
+    cout << "\nPotega kwadratowa z liczby " << a1 << " = ";
+    return a1 * a1;
+}
+
+
+//definicja funkcji dodawanie
+void dodawanie()
+{
+    int a, b;
+    cout << "\nPodaj a= "; cin >> a;
+    cout << "Podaj b= "; cin >> b;
+    cout << "Wynik a " << a << " + " << b << " = " << a + b;
+    cout << potega(a);
+}
+
+//funkcja zwraca wartosc
+
+
+int main()
+{
+    dodawanie();//wywolanie funkcji, podanie nazwy
+    double x, y;
+    x = -55;
+    cout << "\nPodaj y= "; cin >> y;
+    cout << "Wynik jakiegos dzialania wynosi: " << jakies_dzialanie(x, y);
+    cout << "\nNazwa funkcji jako dodatkowa zmienna.";
+    cout << "\n100 podzielone przez" << y << "^2 = " << 100 / potega(y);
+
+    _getch();
+}
+
+double jakies_dzialanie(double x1, double x2) 
+{
+    return x1/x2;
+}
