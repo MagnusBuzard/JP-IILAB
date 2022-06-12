@@ -1,0 +1,55 @@
+#include <conio.h>
+#include <iostream>
+#include <stdlib.h>
+#include <math.h>
+
+using namespace std;
+
+int wybor;
+int M01, M02;
+
+int main()
+{
+start_program:
+    system("cls");
+    cout << "\n\t\t\t\t 1 - Obliczanie n^2 oraz n^3";
+    cout << "\n\t\t\t\t 2 - Wyjscie";
+    cout << "\n\n Twoj wybor: "; cin >> wybor;
+    switch (wybor)
+    {
+    case 1:
+    {
+        cout << "\n\n\nPodaj przedzial dla ktorego chcesz obliczysz n^2 oraz n^3 w granicach od -200 do 200";
+        cout << "\n\tPodaj dolna wartosc przedzialu: "; cin >> M01;
+        cout << "\n\t Podaj gorna wartosc przedzialu: "; cin >> M02;
+        if ((M01 < -200) || (M02 > 200))
+        {
+            cout << "Podano wartosci spoza przedzialu, powrot do programu glownego";
+            _getch();
+            goto start_program;
+        }
+        else
+        {
+            for (int i = M01; i <= M02; i++)
+            {
+                cout << "\n Kwadrat liczby calkowitej " << i << " = " << i * i << "\t Szescian liczby calkowitej " << i << " = " << i * i * i << endl;
+            }
+            cout << "\n\tDowolny przycisk spowoduje powrot do programu glownego";
+        }
+        _getch();
+        goto start_program;
+    }
+    case 2:
+    {
+        cout << "\nKoniec dzialania programu";
+        _getch();
+        break;
+    }
+    }
+    if (wybor > 2)
+    {
+        cout << "\nNie ma takiego wyboru, wybierz jeszcze raz";
+        _getch();
+        goto start_program;
+    }
+}
