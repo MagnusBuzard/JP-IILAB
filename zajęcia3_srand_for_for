@@ -1,0 +1,91 @@
+#include <conio.h>
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+int wybor;
+
+int main()
+{
+    do
+    {
+        system("cls");
+        cout << "\n\n\t\t\t\t 1 - Zgadywanka";
+        cout << "\n\n\t\t\t\t 2 - Petla for...";
+        cout << "\n\n\t\t\t\t 3 - Silnia";
+        cout << "\n\n\t\t\t\t 4 - Wyjscie";
+        cout << "\n\nTwoj wybor: "; cin >> wybor;
+        switch (wybor)
+        {
+        case 1:
+        {  system("cls");
+           cout << "\n\n\t\t\t\t  - Zgadywanka";
+           cout << "\n\n Komputer wylosowal liczbe z przedzialu <1...10>";
+           int moja, komp;
+           int licznik = 1;
+           srand(time(0));
+           komp = rand() % 10 + 1;
+           cout << "\nPodaj, jaka to liczba: "; cin >> moja;
+           while (moja != komp)
+           {
+               if (moja > komp)
+               {
+                cout << "\nLiczba za duza. Podaj nowa: "; cin >> moja;
+               }
+               else
+               {
+                cout << "\nLiczba za mala. Podaj nowa: "; cin >> moja;
+               }
+            ++licznik;
+           }
+
+           cout << "\n\nBrawo! Udalo sie odgadnac za "<< licznik << " razem";
+
+
+        _getch(); break;
+        }
+
+        case 2:
+        {  system("cls");
+        cout << "\n\n\t\t\t\tPetla for...";
+        cout << "\n\nSumowanie liczb od 1 do 10.";
+        int suma = 0;
+        for (int i = 1; i <= 10; ++i)
+        {
+            suma = suma + i;
+            cout << "\ni= " << i;
+            cout << "\nsuma= " << suma;
+        }
+        //zageszczenie petli
+        cout << "\n\nPetla w petli";
+        int a, b;
+        a = 1; b = -5;
+        for (int i = 1; i <=3; ++i)
+            for (int j = -4; j <= 2; j = j + 2)
+            {
+                a = i + b;
+                b = a + j;
+                cout << "\ni= " << i;
+                cout << "\nj= " << j;
+                cout << "\na= " << a;
+                cout << "\nb= " << b;
+                cout << endl;
+            }
+        _getch(); break;
+        }
+
+        case 3:
+        {  system("cls");
+
+        _getch(); break;
+        }
+
+        case 4:
+        { break; }
+
+        default: {cout << "\n\nNiewlasciwy wybor!"; _getch(); break; }
+        }//end switch
+    } while (wybor != 4);
+}//end main
+
