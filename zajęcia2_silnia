@@ -1,0 +1,28 @@
+#include <conio.h>
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+int x;
+int y = 1;
+
+int main()
+{
+	a:
+	cout << "Podaj liczbe z zakresu 0...8 = "; cin >> x;
+	if (x >= 0 && x <= 8)
+	{
+		for (int i = 1; i <= x; i++)
+		{
+			y = y * i;
+		}
+		cout<< "silnia z x = "<< y;
+	}
+	else
+	{
+		cout << "zla liczba\n";
+			goto a;
+	}
+	_getch();
+}
