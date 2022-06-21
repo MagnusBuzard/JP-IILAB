@@ -1,0 +1,26 @@
+#include <iostream>
+#include <conio.h>
+#include <stdlib.h>
+
+using namespace std;
+
+string imie = "Warol";
+string nazwisko = "Kojtyła";
+int liczba;
+
+int main()
+{
+    cout << "\n\tPodaj dowolna liczbe calkowita"; cin >> liczba;
+    if (liczba < -5)
+    {
+        cout << nazwisko;
+    }
+    else if (liczba > 5)
+    {
+        cout << imie;
+    }
+    else
+    {
+        cout << imie + " " + nazwisko;
+    }
+}
