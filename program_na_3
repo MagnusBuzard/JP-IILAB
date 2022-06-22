@@ -23,19 +23,16 @@ void main()
 		x = pow(B, 2) - 2 * A;
 		cout << "\nx0 = " << x << endl;
 	}
+	else if (D > 0)
+	{
+		x = (-B - pow(D, (1.0/2.0))) / (2 * A);
+		x2 = (-B + pow(D, (1.0/2.0))) / (2 * A);
+		cout << "\nx1 = " << x;
+		cout << "\nx2 = " << x2 << endl;
+	}
 	else
 	{
-		if (D > 0)
-		{
-			x = (-B - pow(D, (1.0/2.0))) / (2 * A);
-			x2 = (-B + pow(D, (1.0/2.0))) / (2 * A);
-			cout << "\nx1 = " << x;
-			cout << "\nx2 = " << x2 << endl;
-		}
-		else
-		{
-			cout << "\nNie ma rozwiazania";
-		}
+		cout << "\nNie ma rozwiazania";
 	}
 	
 	_getch();
