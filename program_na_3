@@ -1,0 +1,42 @@
+#include <stdlib.h>
+#include <iostream>
+#include <conio.h>
+#include <cmath>
+
+
+using namespace std;
+
+double A, B, C, D, x, x2;
+
+
+void main()
+{
+	cout << "Podaj wartosc A = "; cin >> A;
+	cout << "Podaj wartosc B = "; cin >> B;
+	cout << "Podaj wartosc C = "; cin >> C;
+
+	D = pow(B, 2) - 4 * A * C;
+	cout << "delta = " << D;
+
+	if (D == 0)
+	{
+		x = pow(B, 2) - 2 * A;
+		cout << "\nx0 = " << x << endl;
+	}
+	else
+	{
+		if (D > 0)
+		{
+			x = (-B - pow(D, (1.0/2.0))) / (2 * A);
+			x2 = (-B + pow(D, (1.0/2.0))) / (2 * A);
+			cout << "\nx1 = " << x;
+			cout << "\nx2 = " << x2 << endl;
+		}
+		else
+		{
+			cout << "\nNie ma rozwiazania";
+		}
+	}
+	
+	_getch();
+}
